@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
 # Ei luo valilyonteja nimeen - ne korvataan tyhjalla
-# fwriteexcel - load workbook with name.xlsx
-# Version 1.0.0
+# Version 1.0.1
 
 import RPi.GPIO as GPIO
 import SimpleMFRC522
@@ -26,13 +25,13 @@ while True:
 	time = datetime.datetime.now().time()
 	wb = openpyxl.load_workbook(text.replace(" ", "") + '.xlsx')
 	
-	if text in wb.sheetnames:
+	if text.replace(" ", "") in wb.sheetnames:
 		nameis = "True"
-		sheet = wb[text]
+		sheet = wb[text.replace(" ", "")]
 	
 	if nameis != "True":
-		wb.create_sheet(text)
-		sheet = wb [text]
+		wb.create_sheet(text.replace(" ", ""))
+		sheet = wb [text.replace(" ", "")]
 
 #sheet = wb['Sheet1']
 
