@@ -8,6 +8,7 @@ import RPi.GPIO as GPIO
 import SimpleMFRC522
 import openpyxl
 import datetime
+import shutil
 
 while True:
 	inside = "in"
@@ -48,6 +49,7 @@ while True:
 	        sheet.cell(row=a+1,column=4).value=time
 	
 	        wb.save(text.replace(" ","") + '.xlsx')
+		shutil.copy2('/home/pi/pilvijarjestelma/' + text.replace(" ", "") + '.xlsx', '/home/pi/NextcloudFold/excel')
 		print("Welcome, " + text)
 	
 		GPIO.cleanup()
@@ -60,6 +62,7 @@ while True:
 	        sheet.cell(row=a+1,column=8).value=time
 	
 	        wb.save(text.replace(" ", "") + '.xlsx')
+		shutil.copy2('/home/pi/pilvijarjestelma/' + text.replace(" ", "") + '.xlsx', '/home/pi/NextcloudFold/excel')
 	        print("Goodbye, " + text)
 	
 		GPIO.cleanup()
