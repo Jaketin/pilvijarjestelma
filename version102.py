@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-
-# Ei luo valilyonteja nimeen - ne korvataan tyhjalla
 # Version 1.0.2
 
 import RPi.GPIO as GPIO
@@ -32,13 +30,6 @@ while True:
 	if nameis != "True":
 		wb.create_sheet(text.replace(" ", ""))
 		sheet = wb [text.replace(" ", "")]
-
-#sheet = wb['Sheet1']
-
-# =IF(ISBLANK(H3); "" ; H3-D2)
-#while direction != outside and direction != inside:
-#
-#        direction = input("Going inside or outside?: ")
 
 	if direction == inside:
 	        a = sheet.max_row
