@@ -10,12 +10,18 @@ NextCloud server and client (server can be hosted elsewhere)
 
 
 ## Python dependencies:  
-SimpleMFRC522  
+https://github.com/lthiery/SPI-Py  
+https://github.com/pimylifeup/MFRC522-python  
 openpyxl  
 datetime  
 shutil  
 
-## The program code is in the file version102.py
+## Files
+.xlsx files - .xlsx files we used in testing this program  
+Write.py - to write data (names) on RFID tags  
+ogread.py - Simply read what is on RFID tags  
+version101.py - old version, can be disregarded  
+version102.py - current program version
 
 ### How it works:
 
