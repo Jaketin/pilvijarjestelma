@@ -71,8 +71,8 @@ while True:
 	        sheet.cell(row=a+1,column=7).value=date
 	        sheet.cell(row=a+1,column=8).value=time
 
-		sheet.cell(row=a+1,column=10).value='=sum()'
-			# calculate work time -- code missing
+		sheet.cell(row=a+1,column=10).value='=SUM(OFFSET(INDIRECT(ADDRESS(ROW(); COLUMN()));0;-1;1;1)-OFFSET(INDIRECT(ADDRESS(ROW(); COLUMN()));-1;-5;1;1))'
+			# calculate work time
 	
 	        wb.save(text.replace(" ", "") + '.xlsx')
 			# save the file and copy it to NextCloud client folder
