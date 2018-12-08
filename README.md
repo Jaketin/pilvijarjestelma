@@ -30,3 +30,5 @@ The program creates a worksheet with the tag data as its name, and writes the ev
 A worktime calculation is also written into the document. It should take into account human error while reading the tag.
 
 After writing the document, it is saved in the program's folder and copied into NextCloud's client folder in order to sync it with the server.
+
+It is recommended to create a separate account for the NextCloud client. After the first time a file is uploaded, the server admin should share the file with the corresponding user in NextCloud. Afterwards, the user will receive an up-to-date .xlsx file with their work time.
