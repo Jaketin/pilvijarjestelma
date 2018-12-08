@@ -27,6 +27,7 @@ while True:
 	reader = SimpleMFRC522.SimpleMFRC522()
 	id, text = reader.read()
 		# read the name on a tag
+		
 	date = datetime.date.today()
 	time = datetime.datetime.now().time()
 	wb = openpyxl.load_workbook(text.replace(" ", "") + '.xlsx')
@@ -34,16 +35,19 @@ while True:
 	
 	if text.replace(" ", "") in wb.sheetnames:
 		# if sheet with name already exists, use it
+		
 		nameis = "True"
 		sheet = wb[text.replace(" ", "")]
 	
 	if nameis != "True":
 		# if sheet with name doesn't exist, create one and use it
+		
 		wb.create_sheet(text.replace(" ", ""))
 		sheet = wb [text.replace(" ", "")]
 
 	if direction == inside:
 		# if heading to work, write all the data on columns 1-4
+		
 	        a = sheet.max_row
 		sheet.cell(row=a+1,column=1).value="Inside"
 	        sheet.cell(row=a+1,column=2).value=text
@@ -52,6 +56,7 @@ while True:
 	
 	        wb.save(text.replace(" ","") + '.xlsx')
 			# save the file and copy it to NextCloud client folder
+			
 		shutil.copy2('/home/pi/pilvijarjestelma/' + text.replace(" ", "") + '.xlsx', '/home/pi/NextcloudFold/excel')
 		print("Welcome, " + text)
 	
@@ -59,6 +64,7 @@ while True:
 	
 	elif direction == outside:
 		# if leaving work, write on columns 5-8
+		
 		a = sheet.max_row
 	        sheet.cell(row=a+1,column=5).value="Outside"
 	        sheet.cell(row=a+1,column=6).value=text
@@ -70,6 +76,7 @@ while True:
 	
 	        wb.save(text.replace(" ", "") + '.xlsx')
 			# save the file and copy it to NextCloud client folder
+			
 		shutil.copy2('/home/pi/pilvijarjestelma/' + text.replace(" ", "") + '.xlsx', '/home/pi/NextcloudFold/excel')
 	        print("Goodbye, " + text)
 	
