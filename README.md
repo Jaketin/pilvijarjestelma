@@ -1,6 +1,11 @@
 # Pilvijärjestelmä - work time tracking
 
 This program uses a Raspberry Pi 3, an MFRC522 RFID reader and NextCloud to track work time.
+Project members:  
+Matias Richterich  
+Ville Touronen  
+Jaakko Veijonen  
+Vili Viita
 
 ## General dependencies:  
 Raspberry Pi 3 or similar  
